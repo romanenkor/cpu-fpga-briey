@@ -1,0 +1,16 @@
+Fitter Status : Successful - Sat Oct 31 19:42:15 2020
+Quartus Prime Version : 16.1.2 Build 203 01/18/2017 SJ Standard Edition
+Revision Name : A_ESTF
+Top-level Entity Name : A_ESTF
+Family : Cyclone IV E
+Device : EP4CE15F17C8
+Timing Models : Final
+Total logic elements : 5,411 / 15,408 ( 35 % )
+    Total combinational functions : 4,472 / 15,408 ( 29 % )
+    Dedicated logic registers : 3,071 / 15,408 ( 20 % )
+Total registers : 3071
+Total pins : 155 / 166 ( 93 % )
+Total virtual pins : 0
+Total memory bits : 106,752 / 516,096 ( 21 % )
+Embedded Multiplier 9-bit elements : 8 / 112 ( 7 % )
+Total PLLs : 1 / 4 ( 25 % )

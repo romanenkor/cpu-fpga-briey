@@ -1,0 +1,363 @@
+
+Discarded input sections
+
+ .text          0x0000000000000000        0x0 /tmp/ccr3hQ4k.o
+ .data          0x0000000000000000        0x0 /tmp/ccr3hQ4k.o
+ .bss           0x0000000000000000        0x0 /tmp/ccr3hQ4k.o
+ .data          0x0000000000000000        0x0 /tmp/cckdp8Vk.o
+ .bss           0x0000000000000000        0x0 /tmp/cckdp8Vk.o
+
+Memory Configuration
+
+Name             Origin             Length             Attributes
+sram             0x0000000080000000 0x0000000000001000 xrw
+sdram            0x0000000040000000 0x0000000002000000 w !xr
+*default*        0x0000000000000000 0xffffffffffffffff
+
+Linker script and memory map
+
+                [!provide]                        PROVIDE (__executable_start = SEGMENT_START ("text-segment", 0x10000))
+                0x0000000000010054                . = (SEGMENT_START ("text-segment", 0x10000) + SIZEOF_HEADERS)
+                0x0000000080001000                PROVIDE (__stack_top = (ORIGIN (sram) + LENGTH (sram)))
+
+.interp
+ *(.interp)
+
+.note.gnu.build-id
+ *(.note.gnu.build-id)
+
+.hash
+ *(.hash)
+
+.gnu.hash
+ *(.gnu.hash)
+
+.dynsym
+ *(.dynsym)
+
+.dynstr
+ *(.dynstr)
+
+.gnu.version
+ *(.gnu.version)
+
+.gnu.version_d
+ *(.gnu.version_d)
+
+.gnu.version_r
+ *(.gnu.version_r)
+
+.rela.dyn       0x0000000080000000        0x0
+ *(.rela.init)
+ .rela.init     0x0000000080000000        0x0 /tmp/ccr3hQ4k.o
+ *(.rela.text .rela.text.* .rela.gnu.linkonce.t.*)
+ *(.rela.fini)
+ *(.rela.rodata .rela.rodata.* .rela.gnu.linkonce.r.*)
+ *(.rela.data .rela.data.* .rela.gnu.linkonce.d.*)
+ *(.rela.tdata .rela.tdata.* .rela.gnu.linkonce.td.*)
+ *(.rela.tbss .rela.tbss.* .rela.gnu.linkonce.tb.*)
+ *(.rela.ctors)
+ *(.rela.dtors)
+ *(.rela.got)
+ *(.rela.sdata .rela.sdata.* .rela.gnu.linkonce.s.*)
+ *(.rela.sbss .rela.sbss.* .rela.gnu.linkonce.sb.*)
+ *(.rela.sdata2 .rela.sdata2.* .rela.gnu.linkonce.s2.*)
+ *(.rela.sbss2 .rela.sbss2.* .rela.gnu.linkonce.sb2.*)
+ *(.rela.bss .rela.bss.* .rela.gnu.linkonce.b.*)
+                [!provide]                        PROVIDE (__rela_iplt_start = .)
+ *(.rela.iplt)
+                [!provide]                        PROVIDE (__rela_iplt_end = .)
+
+.rela.plt
+ *(.rela.plt)
+
+.init           0x0000000080000000       0x18
+ *(SORT_NONE(.init))
+ .init          0x0000000080000000       0x18 /tmp/ccr3hQ4k.o
+                0x0000000080000000                _start
+
+.plt
+ *(.plt)
+
+.iplt
+ *(.iplt)
+
+.text           0x0000000080000018      0x388
+ *(.text.unlikely .text.*_unlikely .text.unlikely.*)
+ *(.text.exit .text.exit.*)
+ *(.text.startup .text.startup.*)
+ *(.text.hot .text.hot.*)
+ *(SORT_BY_NAME(.text.sorted.*))
+ *(.text .stub .text.* .gnu.linkonce.t.*)
+ .text          0x0000000080000018      0x388 /tmp/cckdp8Vk.o
+                0x0000000080000254                print
+                0x00000000800002ac                main
+                0x0000000080000384                irqCallback
+ *(.gnu.warning)
+
+.fini
+ *(SORT_NONE(.fini))
+                [!provide]                        PROVIDE (__etext = .)
+                [!provide]                        PROVIDE (_etext = .)
+                [!provide]                        PROVIDE (etext = .)
+
+.rodata         0x00000000800003a0       0x69
+ *(.rodata .rodata.* .gnu.linkonce.r.*)
+ .rodata        0x00000000800003a0       0x69 /tmp/cckdp8Vk.o
+
+.rodata1
+ *(.rodata1)
+
+.sdata2
+ *(.sdata2 .sdata2.* .gnu.linkonce.s2.*)
+
+.sbss2
+ *(.sbss2 .sbss2.* .gnu.linkonce.sb2.*)
+
+.eh_frame_hdr
+ *(.eh_frame_hdr)
+ *(.eh_frame_entry .eh_frame_entry.*)
+
+.eh_frame       0x000000008000040c       0x2c
+ *(.eh_frame)
+ .eh_frame      0x000000008000040c       0x2c /tmp/ccr3hQ4k.o
+ *(.eh_frame.*)
+
+.gcc_except_table
+ *(.gcc_except_table .gcc_except_table.*)
+
+.gnu_extab
+ *(.gnu_extab*)
+
+.exception_ranges
+ *(.exception_ranges*)
+                0x0000000080001438                . = DATA_SEGMENT_ALIGN (CONSTANT (MAXPAGESIZE), CONSTANT (COMMONPAGESIZE))
+
+.eh_frame
+ *(.eh_frame)
+ *(.eh_frame.*)
+
+.gnu_extab
+ *(.gnu_extab)
+
+.gcc_except_table
+ *(.gcc_except_table .gcc_except_table.*)
+
+.exception_ranges
+ *(.exception_ranges*)
+
+.tdata          0x0000000080001438        0x0
+                [!provide]                        PROVIDE (__tdata_start = .)
+ *(.tdata .tdata.* .gnu.linkonce.td.*)
+
+.tbss
+ *(.tbss .tbss.* .gnu.linkonce.tb.*)
+ *(.tcommon)
+
+.preinit_array  0x0000000080001438        0x0
+                [!provide]                        PROVIDE (__preinit_array_start = .)
+ *(.preinit_array)
+                [!provide]                        PROVIDE (__preinit_array_end = .)
+
+.init_array     0x0000000080001438        0x0
+                [!provide]                        PROVIDE (__init_array_start = .)
+ *(SORT_BY_INIT_PRIORITY(.init_array.*) SORT_BY_INIT_PRIORITY(.ctors.*))
+ *(.init_array EXCLUDE_FILE(*crtend?.o *crtend.o *crtbegin?.o *crtbegin.o) .ctors)
+                [!provide]                        PROVIDE (__init_array_end = .)
+
+.fini_array     0x0000000080001438        0x0
+                [!provide]                        PROVIDE (__fini_array_start = .)
+ *(SORT_BY_INIT_PRIORITY(.fini_array.*) SORT_BY_INIT_PRIORITY(.dtors.*))
+ *(.fini_array EXCLUDE_FILE(*crtend?.o *crtend.o *crtbegin?.o *crtbegin.o) .dtors)
+                [!provide]                        PROVIDE (__fini_array_end = .)
+
+.ctors
+ *crtbegin.o(.ctors)
+ *crtbegin?.o(.ctors)
+ *(EXCLUDE_FILE(*crtend?.o *crtend.o) .ctors)
+ *(SORT_BY_NAME(.ctors.*))
+ *(.ctors)
+
+.dtors
+ *crtbegin.o(.dtors)
+ *crtbegin?.o(.dtors)
+ *(EXCLUDE_FILE(*crtend?.o *crtend.o) .dtors)
+ *(SORT_BY_NAME(.dtors.*))
+ *(.dtors)
+
+.jcr
+ *(.jcr)
+
+.data.rel.ro
+ *(.data.rel.ro.local* .gnu.linkonce.d.rel.ro.local.*)
+ *(.data.rel.ro .data.rel.ro.* .gnu.linkonce.d.rel.ro.*)
+
+.dynamic
+ *(.dynamic)
+                0x0000000080001438                . = DATA_SEGMENT_RELRO_END (., 0x0)
+
+.data           0x0000000080001438        0x0
+                0x0000000080001438                __DATA_BEGIN__ = .
+ *(.data .data.* .gnu.linkonce.d.*)
+
+.data1
+ *(.data1)
+
+.got
+ *(.got.plt)
+ *(.igot.plt)
+ *(.got)
+ *(.igot)
+
+.sdata          0x0000000080001438        0x0
+                0x0000000080001438                __SDATA_BEGIN__ = .
+ *(.srodata.cst16)
+ *(.srodata.cst8)
+ *(.srodata.cst4)
+ *(.srodata.cst2)
+ *(.srodata .srodata.*)
+ *(.sdata .sdata.* .gnu.linkonce.s.*)
+                0x0000000080001438                _edata = .
+                [!provide]                        PROVIDE (edata = .)
+                0x0000000080001438                . = .
+                0x0000000080001438                __bss_start = .
+
+.sbss
+ *(.dynsbss)
+ *(.sbss .sbss.* .gnu.linkonce.sb.*)
+ *(.scommon)
+
+.bss            0x0000000080001438        0x0
+ *(.dynbss)
+ *(.bss .bss.* .gnu.linkonce.b.*)
+ *(COMMON)
+                0x0000000080001438                . = ALIGN ((. != 0x0)?0x8:0x1)
+                0x0000000080001438                . = ALIGN (0x8)
+                0x0000000080001438                . = SEGMENT_START ("ldata-segment", .)
+                0x0000000080001438                . = ALIGN (0x8)
+                0x0000000080001438                __BSS_END__ = .
+                0x0000000080001c38                __global_pointer$ = MIN ((__SDATA_BEGIN__ + 0x800), MAX ((__DATA_BEGIN__ + 0x800), (__BSS_END__ - 0x800)))
+                0x0000000080001438                _end = .
+                [!provide]                        PROVIDE (end = .)
+                0x0000000080001438                . = DATA_SEGMENT_END (.)
+
+.stab
+ *(.stab)
+
+.stabstr
+ *(.stabstr)
+
+.stab.excl
+ *(.stab.excl)
+
+.stab.exclstr
+ *(.stab.exclstr)
+
+.stab.index
+ *(.stab.index)
+
+.stab.indexstr
+ *(.stab.indexstr)
+
+.comment        0x0000000000000000       0x22
+ *(.comment)
+ .comment       0x0000000000000000       0x22 /tmp/cckdp8Vk.o
+                                         0x23 (size before relaxing)
+
+.riscv.attributes
+                0x0000000000000000       0x21
+ .riscv.attributes
+                0x0000000000000000       0x1f /tmp/ccr3hQ4k.o
+ .riscv.attributes
+                0x000000000000001f       0x21 /tmp/cckdp8Vk.o
+
+.gnu.build.attributes
+ *(.gnu.build.attributes .gnu.build.attributes.*)
+
+.debug
+ *(.debug)
+
+.line
+ *(.line)
+
+.debug_srcinfo
+ *(.debug_srcinfo)
+
+.debug_sfnames
+ *(.debug_sfnames)
+
+.debug_aranges  0x0000000000000000       0x40
+ *(.debug_aranges)
+ .debug_aranges
+                0x0000000000000000       0x20 /tmp/ccr3hQ4k.o
+ .debug_aranges
+                0x0000000000000020       0x20 /tmp/cckdp8Vk.o
+
+.debug_pubnames
+ *(.debug_pubnames)
+
+.debug_info     0x0000000000000000      0x5c1
+ *(.debug_info .gnu.linkonce.wi.*)
+ .debug_info    0x0000000000000000       0x26 /tmp/ccr3hQ4k.o
+ .debug_info    0x0000000000000026      0x59b /tmp/cckdp8Vk.o
+
+.debug_abbrev   0x0000000000000000      0x1b5
+ *(.debug_abbrev)
+ .debug_abbrev  0x0000000000000000       0x14 /tmp/ccr3hQ4k.o
+ .debug_abbrev  0x0000000000000014      0x1a1 /tmp/cckdp8Vk.o
+
+.debug_line     0x0000000000000000      0x3e5
+ *(.debug_line .debug_line.* .debug_line_end)
+ .debug_line    0x0000000000000000       0x4a /tmp/ccr3hQ4k.o
+ .debug_line    0x000000000000004a      0x39b /tmp/cckdp8Vk.o
+
+.debug_frame    0x0000000000000000      0x1e8
+ *(.debug_frame)
+ .debug_frame   0x0000000000000000      0x1e8 /tmp/cckdp8Vk.o
+
+.debug_str      0x0000000000000000      0x349
+ *(.debug_str)
+ .debug_str     0x0000000000000000       0x36 /tmp/ccr3hQ4k.o
+ .debug_str     0x0000000000000036      0x313 /tmp/cckdp8Vk.o
+                                        0x371 (size before relaxing)
+
+.debug_loc
+ *(.debug_loc)
+
+.debug_macinfo
+ *(.debug_macinfo)
+
+.debug_weaknames
+ *(.debug_weaknames)
+
+.debug_funcnames
+ *(.debug_funcnames)
+
+.debug_typenames
+ *(.debug_typenames)
+
+.debug_varnames
+ *(.debug_varnames)
+
+.debug_pubtypes
+ *(.debug_pubtypes)
+
+.debug_ranges
+ *(.debug_ranges)
+
+.debug_macro
+ *(.debug_macro)
+
+.debug_addr
+ *(.debug_addr)
+
+.gnu.attributes
+ *(.gnu.attributes)
+
+/DISCARD/
+ *(.note.GNU-stack)
+ *(.gnu_debuglink)
+ *(.gnu.lto_*)
+LOAD /tmp/ccr3hQ4k.o
+LOAD /tmp/cckdp8Vk.o
+OUTPUT(bin/uart-test.elf elf32-littleriscv)

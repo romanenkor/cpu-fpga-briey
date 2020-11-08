@@ -1,0 +1,14 @@
+Analysis & Synthesis Status : Successful - Sat Oct 31 19:41:53 2020
+Quartus Prime Version : 16.1.2 Build 203 01/18/2017 SJ Standard Edition
+Revision Name : A_ESTF
+Top-level Entity Name : A_ESTF
+Family : Cyclone IV E
+Total logic elements : 6,115
+    Total combinational functions : 4,470
+    Dedicated logic registers : 3,257
+Total registers : 3257
+Total pins : 155
+Total virtual pins : 0
+Total memory bits : 106,752
+Embedded Multiplier 9-bit elements : 8
+Total PLLs : 1
